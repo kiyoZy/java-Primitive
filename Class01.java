@@ -1,7 +1,9 @@
 package onlyJava;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -14,7 +16,9 @@ public class Class01 {
 
 //		test02();
 
-		test03();
+//		test03();
+
+		testMap();
 	}
 
 	public void test01() {
@@ -49,6 +53,20 @@ public class Class01 {
 		}
 	}
 
+	static void testMap() {
+		Map<String, String> map = new HashMap<>();
+
+		map.put("赤", "イチゴ");
+		map.put("緑", "キャベツ"); // ここは下記で上書きされる
+		map.put("黄", "バナナ"); // ここは下記で上書きされる
+		map.put("黄", "みそ");
+		map.put("緑", "はっぱ");
+
+		map.forEach((key, val) -> System.out.println(key + " : " + val));
+
+		String key = "緑";
+		System.out.println("\nキー：" + key + " = " + map.get(key));
+	}
 }
 
 @Data
