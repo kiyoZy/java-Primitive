@@ -1,0 +1,6 @@
+lombokはjarを落として来ててきとーに保存
+
+Eclipse
+　project　右クリック/ビルドパス/Javaのビルド・パス/ライブラリー
+
+　クラスパスに「外部JARの追加」でlombokのjarを追加する
