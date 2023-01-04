@@ -18,8 +18,30 @@ public class Class01 {
 
 //		test03();
 
-		testMap();
+//		testMap();
+
+		testGenerics();
 	}
+
+	// 総称型テスト
+	static void testGenerics() {
+		PairMap pair = new PairMap<String>("ひとつめ","ふたつめ");
+		System.out.println("1個目　＝　" + pair.first());
+		System.out.println("2個目　＝　" + pair.second());
+
+		System.out.println("\n");
+
+		PairMap pair2 = new PairMap<Integer>(3, 6);
+		System.out.println("first = " + pair.first());
+		System.out.println("second = " + pair.second());
+
+		// ↓はコンパイルエラーになる
+		// PairMap pair3 = new PairMap<String>("はち", 8);
+
+	}
+
+
+
 
 	public void test01() {
 		Person person = new Person(0, "a");
@@ -66,6 +88,25 @@ public class Class01 {
 
 		String key = "緑";
 		System.out.println("\nキー：" + key + " = " + map.get(key));
+	}
+}
+
+// https://camp.trainocate.co.jp/magazine/java-generics/
+class PairMap<T> {
+	private T first;
+	private T second;
+
+	public T first() {
+		return this.first;
+	}
+
+	public T second() {
+		return this.second;
+	}
+
+	public PairMap(T first, T second) {
+		this.first = first;
+		this.second = second;
 	}
 }
 
